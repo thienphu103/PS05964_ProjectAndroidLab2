@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
         ClassListView a = new ClassListView("Tính Tổng");
         ClassListView b = new ClassListView("Giải Phương Trình Bậc 1");
-        ClassListView c = new ClassListView("Giải Phương trình Bậc 2: ");
-        ClassListView d = new ClassListView("Max ◙& Min 3 Số");
+        ClassListView c = new ClassListView("Giải Phương trình Bậc 2 ");
+        ClassListView d = new ClassListView("Max & Min 3 Số");
         ClassListView e = new ClassListView(" Số Nguyên Tố Nằm Giữa Hai Số ");
         ClassListView f = new ClassListView("S = 1+2+3+….+n");
         ClassListView g = new ClassListView("Ước Chung & Bội Chung");
