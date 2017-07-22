@@ -58,17 +58,20 @@ public class bai2 extends AppCompatActivity {
                             }
                         });
                     }
+
+                if (a == 0) {
+                    if (b == 0) {
+                        txtsolve.setText("Phuong Trinh Vo So Nghiem");
                         txtsolve.setTextColor(Color.BLUE);
-                        if (a == 0) {
-                            if (b == 0) {
-                                txtsolve.setText("phuong trinh vo so nghiem");
-                            } else {
-                                txtsolve.setText("phuong trinh vo nghiem");
-                            }
-                        } else {
-                            x = -b / a;
-                            txtsolve.setText("nghiem cua phuong trinh la" + x);
-                        }
+                    } else {
+                        txtsolve.setText("Phuong Trinh Vo Nghiem");
+                        txtsolve.setTextColor(Color.BLUE);
+                    }
+                } else {
+                    x = -b / a;
+                    txtsolve.setText("Phương trình có nghiệm: " + x);
+                    txtsolve.setTextColor(Color.BLUE);
+                }
 
 
             }
