@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import static com.example.a.lab2.R.id.txt2;
 
@@ -33,7 +32,8 @@ public class bai1 extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (txte1.getText().toString().equals("") || txte2.getText().toString().equals("")) {
+                a = Integer.parseInt(txte1.getText().toString());
+                b = Integer.parseInt(txte2.getText().toString());
                     if (txte1.getText().toString().equals("")) {
                         txte1.setText("Enter Number not Empty . Please!!!");
                         txte1.setTextColor(Color.RED);
@@ -57,25 +57,10 @@ public class bai1 extends AppCompatActivity {
                             }
                         });
                     }
-
-                } else {
-                    try {
-                        a = Integer.parseInt(txte1.getText().toString());
-                        b = Integer.parseInt(txte2.getText().toString());
-                    } catch (Exception e) {
-                        Toast.makeText(bai1.this, "Error", Toast.LENGTH_LONG).show();
-                        test = 0;
-                    }
-                    if (test == 0) {
-                        txtsum.setText("Error");
-                        txtsum.setTextColor(Color.RED);
-                    } else {
                         txtsum.setTextColor(Color.BLUE);
                         txtsum.setText(a + "" + "+" + b + "=" + (a + b));
 
                     }
-                }
-            }
         });
 
     }

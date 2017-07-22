@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Bai7 extends AppCompatActivity {
     EditText txte1;
@@ -34,49 +33,40 @@ public class Bai7 extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (txte1.getText().toString().equals("") || txte2.getText().toString().equals("")) {
-                    if (txte1.getText().toString().equals("")) {
-                        txte1.setText("Enter Number not Empty . Please!!!");
-                        txte1.setTextColor(Color.RED);
-                        txte1.setOnTouchListener(new View.OnTouchListener() {
-                            @Override
-                            public boolean onTouch(View v, MotionEvent event) {
-                                txte1.setText("");
-                                txte1.setTextColor(Color.BLACK);
-                                return false;
-                            }
-                        });
-                    }
-                    if (txte2.getText().toString().equals("")) {
-                        txte2.setText("Enter Number not Empty . Please!!!");
-                        txte2.setTextColor(Color.RED);
-                        txte2.setOnTouchListener(new View.OnTouchListener() {
-                            @Override
-                            public boolean onTouch(View v, MotionEvent event) {
-                                txte2.setText("");
-                                txte2.setTextColor(Color.BLACK);
-                                return false;
-                            }
-                        });
-                    }
+                a = Integer.parseInt(txte1.getText().toString());
+                b = Integer.parseInt(txte2.getText().toString());
 
-                } else {
-                    try {
-                        a = Integer.parseInt(txte1.getText().toString());
-                        b = Integer.parseInt(txte2.getText().toString());
-                    } catch (Exception e) {
-                        Toast.makeText(Bai7.this, "Error", Toast.LENGTH_LONG).show();
-                        test = 0;
-                    }
-                    if (test == 0) {
-                        txtsum.setText("Error");
-                        txtsum.setTextColor(Color.RED);
-                    } else {
-                        txtsum.setText("UCLN (a,b) la: " + ucln(a, b) + " \n" + "BCNN (a,b) la: " + bcnn(a, b));
-
-                    }
+                if (txte1.getText().toString().equals("")) {
+                    txte1.setText("Enter Number not Empty . Please!!!");
+                    txte1.setTextColor(Color.RED);
+                    txte1.setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View v, MotionEvent event) {
+                            txte1.setText("");
+                            txte1.setTextColor(Color.BLACK);
+                            return false;
+                        }
+                    });
                 }
+                if (txte2.getText().toString().equals("")) {
+                    txte2.setText("Enter Number not Empty . Please!!!");
+                    txte2.setTextColor(Color.RED);
+                    txte2.setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View v, MotionEvent event) {
+                            txte2.setText("");
+                            txte2.setTextColor(Color.BLACK);
+                            return false;
+                        }
+                    });
+                }
+
+
+                txtsum.setText("UCLN (a,b) la: " + ucln(a, b) + " \n" + "BCNN (a,b) la: " + bcnn(a, b));
+
             }
+
+
         });
 
     }

@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class bai4 extends AppCompatActivity {
     double a = 0, b = 0, c = 0, d = 0;
@@ -38,86 +37,69 @@ public class bai4 extends AppCompatActivity {
         btn_max_min.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (txte1.getText().toString().equals("") || txte2.getText().toString().equals("") || txte3.getText().toString().equals("")) {
-                    if (txte1.getText().toString().equals("")) {
-                        txte1.setText("Enter Number not Empty . Please!!!");
-                        txte1.setTextColor(Color.RED);
-                        txte1.setOnTouchListener(new View.OnTouchListener() {
-                            @Override
-                            public boolean onTouch(View v, MotionEvent event) {
-                                txte1.setText("");
-                                txte1.setTextColor(Color.BLACK);
-                                return false;
-                            }
-                        });
-                    }
-                    if (txte2.getText().toString().equals("")) {
-                        txte2.setText("Enter Number not Empty . Please!!!");
-                        txte2.setTextColor(Color.RED);
-                        txte2.setOnTouchListener(new View.OnTouchListener() {
-                            @Override
-                            public boolean onTouch(View v, MotionEvent event) {
-                                txte2.setText("");
-                                txte2.setTextColor(Color.BLACK);
-                                return false;
-                            }
-                        });
-                    }
-                    if (txte3.getText().toString().equals("")) {
-                        txte3.setText("Enter Number not Empty . Please!!!");
-                        txte3.setTextColor(Color.RED);
-                        txte3.setOnTouchListener(new View.OnTouchListener() {
-                            @Override
-                            public boolean onTouch(View v, MotionEvent event) {
-                                txte3.setText("");
-                                txte3.setTextColor(Color.BLACK);
-                                return false;
-                            }
-                        });
-                    }
-
-                } else {
-                    try {
-                        a = Double.parseDouble(txte1.getText().toString());
-                        b = Double.parseDouble(txte2.getText().toString());
-                        c = Double.parseDouble(txte3.getText().toString());
-
-                    } catch (Exception e) {
-                        Toast.makeText(bai4.this, "Error", Toast.LENGTH_LONG).show();
-                        test = 0;
-                    }
-                    if (test == 0) {
-                        txtsolvemax.setText("Error");
-                        txtsolvemin.setText("");
-                        txtsolvemin.setTextColor(Color.RED);
-                    } else {
-                        min = max = a;
-
-                        if (b > max) {
-
-                            max = b;
+                a = Double.parseDouble(txte1.getText().toString());
+                b = Double.parseDouble(txte2.getText().toString());
+                c = Double.parseDouble(txte3.getText().toString());
+                if (txte1.getText().toString().equals("")) {
+                    txte1.setText("Enter Number not Empty . Please!!!");
+                    txte1.setTextColor(Color.RED);
+                    txte1.setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View v, MotionEvent event) {
+                            txte1.setText("");
+                            txte1.setTextColor(Color.BLACK);
+                            return false;
                         }
-                        if (c > max) {
-
-                            max = c;
-                        }
-                        if (b < min) {
-
-                            min = b;
-                        }
-                        if (c < min) {
-
-                            min = c;
-                        }
-                        txtsolvemax.setText("Max: " + max);
-                        txtsolvemin.setText("Min: " + min);
-                        txtsolvemin.setTextColor(Color.BLUE);
-                        txtsolvemax.setTextColor(Color.BLUE);
-
-                    }
-
-
+                    });
                 }
+                if (txte2.getText().toString().equals("")) {
+                    txte2.setText("Enter Number not Empty . Please!!!");
+                    txte2.setTextColor(Color.RED);
+                    txte2.setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View v, MotionEvent event) {
+                            txte2.setText("");
+                            txte2.setTextColor(Color.BLACK);
+                            return false;
+                        }
+                    });
+                }
+                if (txte3.getText().toString().equals("")) {
+                    txte3.setText("Enter Number not Empty . Please!!!");
+                    txte3.setTextColor(Color.RED);
+                    txte3.setOnTouchListener(new View.OnTouchListener() {
+                        @Override
+                        public boolean onTouch(View v, MotionEvent event) {
+                            txte3.setText("");
+                            txte3.setTextColor(Color.BLACK);
+                            return false;
+                        }
+                    });
+                }
+
+                min = max = a;
+
+                if (b > max) {
+
+                    max = b;
+                }
+                if (c > max) {
+
+                    max = c;
+                }
+                if (b < min) {
+
+                    min = b;
+                }
+                if (c < min) {
+
+                    min = c;
+                }
+                txtsolvemax.setText("Max: " + max);
+                txtsolvemin.setText("Min: " + min);
+                txtsolvemin.setTextColor(Color.BLUE);
+                txtsolvemax.setTextColor(Color.BLUE);
+
             }
 
         });

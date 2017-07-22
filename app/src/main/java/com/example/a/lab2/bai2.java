@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class bai2 extends AppCompatActivity {
     double a=0;
@@ -33,7 +32,8 @@ public class bai2 extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (txte1.getText().toString().equals("") || txte2.getText().toString().equals("")) {
+                a = Double.parseDouble(txte1.getText().toString());
+                b = Double.parseDouble(txte2.getText().toString());
                     if (txte1.getText().toString().equals("")) {
                         txte1.setText("Enter Number not Empty . Please!!!");
                         txte1.setTextColor(Color.RED);
@@ -58,19 +58,6 @@ public class bai2 extends AppCompatActivity {
                             }
                         });
                     }
-
-                } else {
-                    try {
-                        a = Double.parseDouble(txte1.getText().toString());
-                        b = Double.parseDouble(txte2.getText().toString());
-                    } catch (Exception e) {
-                        Toast.makeText(bai2.this, "Error", Toast.LENGTH_LONG).show();
-                        test = 0;
-                    }
-                    if (test == 0) {
-                        txtsolve.setText("Error");
-                        txtsolve.setTextColor(Color.RED);
-                    } else {
                         txtsolve.setTextColor(Color.BLUE);
                         if (a == 0) {
                             if (b == 0) {
@@ -82,8 +69,8 @@ public class bai2 extends AppCompatActivity {
                             x = -b / a;
                             txtsolve.setText("nghiem cua phuong trinh la" + x);
                         }
-                    }
-                }
+
+
             }
         });
 
